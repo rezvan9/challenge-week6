@@ -45,7 +45,7 @@ function showWeather(response) {
 function searchCity(city) {
   let apiKey = "b3a312b2823c477f40bbb6c6210a1736";
   let units = "metric";
-  let url = `http://api.openweathermap.org/data/2.5/weather?&q=${city}&units=${units}&APPID=${apiKey}`;
+  let url = `https://api.openweathermap.org/data/2.5/weather?&q=${city}&units=${units}&APPID=${apiKey}`;
   axios.get(url).then(showWeather);
 }
 
@@ -58,7 +58,7 @@ function showCity(event) {
 function searchLocation(position) {
   let apiKey = "b3a312b2823c477f40bbb6c6210a1736";
   let units = "metric";
-  let url = `http://api.openweathermap.org/data/2.5/weather?&lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=${units}&APPID=${apiKey}`;
+  let url = `https://api.openweathermap.org/data/2.5/weather?&lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=${units}&APPID=${apiKey}`;
 
   axios.get(url).then(showWeather);
 }
@@ -72,5 +72,5 @@ currentDate.innerHTML = `${days[day]} ${hours} : ${zero}${minutes}`;
 
 form.addEventListener("submit", showCity);
 button.addEventListener("click", showPosition);
-// navigator.geolocation.getCurrentPosition(showPosition);
+
 searchCity("banff");
